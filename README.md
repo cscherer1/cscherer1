@@ -8,7 +8,7 @@
 
 ## What I do
 
-8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **34 containers** across 28 services: media stack, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
+8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **34 containers** across 28 services: a full self-hosted media pipeline, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
 
 **Career focus:** Enterprise Solutions Architecture · Systems Integration · Automation Engineering · ServiceNow · Azure integration · Cloudflare Zero Trust networking.
 
@@ -24,14 +24,13 @@
 
 ## The operating evidence (things I actually run and operate)
 
-- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 34 containers / 28 services across three stacks — media automation (Gluetun, qBittorrent, Sonarr, Radarr, Jellyfin/Jellyseerr, Prowlarr, maintainerr, recyclarr, decluttarr, audiobookshelf), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, Stirling-PDF, PairDrop, FileBrowser, Homepage), and the career stack above.
+- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 34 containers / 28 services across three stacks — a full self-hosted media pipeline (automated acquisition, metadata, and streaming, ~10 services deep), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, Stirling-PDF, PairDrop, FileBrowser, Homepage), and the career stack above.
 - Everything is **self-hosted, terminal-first, and monitored** — I automate the things I use, and I operate the automation.
 
 ## Outside the code
 
 - **8+ years** Burns & McDonnell (software developer → ServiceNow lead → IT systems) → **now** Full-Stack Developer & Solutions Architect at Murphy-Hoffman Company (IBM i middleware + Azure/.NET integration)
 - **BS Computer Science**, Southern New Hampshire University — Summa Cum Laude, **4.0 GPA**, Distinguished Scholar Award, earned while working full time
-- Co-authored a mechanism-level clinical white paper on endothelial glycocalyx and capillary leak (GM-CLS) — transferring my systems-architecture thinking into a falsifiable clinical model
 - Designs tools for my hobbies (game mod load-order management, Steam workshop tooling) — I automate even the things I enjoy
 
 ## Tech I live in
