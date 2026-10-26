@@ -1,6 +1,6 @@
 # Christian Scherer
 
-**Solutions Architect & Integration Engineer** — I build self-hosted, automated systems that turn messy manual workflows into reliable pipelines, and I get paid to make legacy and modern stacks talk to each other.
+**Solutions Architect & Integration Engineer** — I turn messy, manual workflows into self-hosted, self-healing automation, and I make legacy and modern systems talk to each other.
 
 🔗 [christianscherer.dev](https://christianscherer.dev) · 📍 Kansas City → Brighton, UK
 
@@ -8,7 +8,7 @@
 
 ## What I do
 
-I'm a full-stack developer and solutions architect who has spent 8+ years integrating systems — IBM i / RPGLE with Azure, Python, and .NET; automation that survives production realities; and self-hosted infrastructure that runs itself. I don't just write code that works in a demo; I write systems that keep working when nobody's watching.
+8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **34 containers** across 28 services: media stack, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
 
 **Career focus:** Enterprise Solutions Architecture · Systems Integration · Automation Engineering · ServiceNow · Azure integration · Cloudflare Zero Trust networking.
 
@@ -16,23 +16,28 @@ I'm a full-stack developer and solutions architect who has spent 8+ years integr
 
 | Repo | What it is | Why it's interesting |
 |---|---|---|
-| [scherer-api](https://github.com/cscherer1/scherer-api) | ASP.NET Core 9 REST API | Production-deployed API with JWT auth, BCrypt, FluentValidation, rate limiting — powers my portfolio site |
+| [scherer-api](https://github.com/cscherer1/scherer-api) | ASP.NET Core 9 REST API | Production-deployed API with JWT auth, BCrypt, FluentValidation, rate-limited login — powers my portfolio site |
 | [scherer-site](https://github.com/cscherer1/scherer-site) | React 19 + TypeScript SPA | Performance-conscious frontend with a hidden admin panel; holds the JWT in memory only |
 | [trackfolio](https://github.com/cscherer1/trackfolio) | Java 21 + Spring Boot app tracker | The foundation of my job-search stack — search, filters, sorting, real tests |
 
-**Currently building:** a fully automated, self-hosted career stack (n8n + NocoDB + JobSpy) that finds, scores, and enriches job matches against my actual skills — replacing manual job-hunting with an orchestrated pipeline.
+**Currently building:** a fully automated, self-hosted career stack — **JobDashboard** — that replaces manual job hunting with an orchestrated pipeline: n8n orchestrates, NocoDB (on PostgreSQL 17) is the system of record, JobSpy ingests listings, an evidence-based skill inventory grounds resumes in *real* GitHub/portfolio/LinkedIn skills (not self-reported claims), and a resume renderer produces ATS-safe PDFs. It's architected around the Cloudflare 524 edge-timeout lesson: heavy work runs as background jobs that report progress instead of one long-lived request.
+
+## The operating evidence (things I actually run and operate)
+
+- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 34 containers / 28 services across three stacks — media automation (Gluetun, qBittorrent, Sonarr, Radarr, Jellyfin/Jellyseerr, Prowlarr, maintainerr, recyclarr, decluttarr, audiobookshelf), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, Stirling-PDF, PairDrop, FileBrowser, Homepage), and the career stack above.
+- Everything is **self-hosted, terminal-first, and monitored** — I automate the things I use, and I operate the automation.
 
 ## Outside the code
 
-- **8+ years** Burns & McDonnell (software dev → ServiceNow → IT systems) → **now** Full-Stack Developer & Solutions Architect at Murphy-Hoffman Company (IBM i middleware + Azure/.NET integration)
-- **BS Computer Science**, Southern New Hampshire University — Summa Cum Laude, 4.0 GPA, Distinguished Scholar Award, earned while working full time
-- Runs a home server lab: Docker Compose, Cloudflare Zero Trust tunnels, media automation, custom agentic-AI tooling
-- Designs tools for my hobbies (game mod load-order management, Steam workshop tooling) — I automate the things I enjoy
+- **8+ years** Burns & McDonnell (software developer → ServiceNow lead → IT systems) → **now** Full-Stack Developer & Solutions Architect at Murphy-Hoffman Company (IBM i middleware + Azure/.NET integration)
+- **BS Computer Science**, Southern New Hampshire University — Summa Cum Laude, **4.0 GPA**, Distinguished Scholar Award, earned while working full time
+- Co-authored a mechanism-level clinical white paper on endothelial glycocalyx and capillary leak (GM-CLS) — transferring my systems-architecture thinking into a falsifiable clinical model
+- Designs tools for my hobbies (game mod load-order management, Steam workshop tooling) — I automate even the things I enjoy
 
 ## Tech I live in
 
-IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · Java · .NET / C# · Azure · ServiceNow · Docker · Cloudflare Zero Trust · Linux (self-hosted everything)
+IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · Java · .NET / C# · Azure · ServiceNow · Docker · n8n · PostgreSQL · Cloudflare Zero Trust · Linux (self-hosted everything)
 
 ## Get in touch
 
-Reach me through [christianscherer.dev](https://christianscherer.dev) — I'm open to Solutions Architect / Integration Engineer roles, and always happy to talk automation.
+Reach me through [christianscherer.dev](https://christianscherer.dev) — I'm open to Enterprise Solutions Architect / Systems Integration / Automation Engineer roles, and always happy to talk automation.
