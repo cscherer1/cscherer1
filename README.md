@@ -8,9 +8,9 @@
 
 ## What I do
 
-8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **34 containers** across 28 services: a full self-hosted media pipeline, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
+8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **40 containers** across three stacks: a full self-hosted media pipeline, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
 
-Recent builds include an **end-to-end encrypted browser terminal** (AES-GCM via WebCrypto, paramiko SSH into persistent tmux sessions, no inbound ports) and a **disposable-container verification pipeline** that gates merges on reproducible static, unit, API, and UI checks.
+Recent builds include an **end-to-end encrypted browser terminal** (AES-GCM via WebCrypto, paramiko SSH into persistent tmux sessions, no inbound ports), a **disposable-container verification pipeline** that gates merges on reproducible static, unit, API, and UI checks, a **config-driven container control plane** (FastAPI + Docker SDK behind a scoped socket proxy, Cloudflare Access JWT verification), a **self-hosted speech service** (faster-whisper STT plus Kokoro/Piper/eSpeak TTS with per-emotion prosody), and a **sanitized disaster-recovery repo** with a host-detecting bootstrap, backup/restore tooling, and rebuild runbooks.
 
 **Career focus:** Full-Stack Engineering · AI Systems Engineering · Enterprise Solutions Architecture · Systems Integration · Automation Engineering · ServiceNow · Azure integration · Cloudflare Zero Trust networking.
 
@@ -26,8 +26,10 @@ Recent builds include an **end-to-end encrypted browser terminal** (AES-GCM via 
 
 ## The operating evidence (things I actually run and operate)
 
-- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 34 containers / 28 services across three stacks — a full self-hosted media pipeline (automated acquisition, metadata, and streaming, ~10 services deep), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, Stirling-PDF, PairDrop, FileBrowser, Homepage), and the career stack above.
+- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 40 containers across three stacks — a full self-hosted media pipeline (automated acquisition, metadata, and streaming, ~10 services deep), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, Stirling-PDF, PairDrop, FileBrowser, Homepage), the career stack above, and a **Command Deck** control plane that discovers the live Docker inventory and exposes guarded start/stop/restart with host and per-container stats.
 - **Secure-Term:** an end-to-end encrypted long-poll browser terminal that keeps terminal content opaque to edge and TLS-inspection proxies — Python standard library HTTP server, AES-GCM, SSH, and persistent tmux sessions, reachable only through an authenticated tunnel.
+- **OP-E Voice:** a local speech service for my agent interface — faster-whisper transcription and Kokoro/Piper/eSpeak synthesis with per-emotion prosody. No cloud speech APIs; all inference runs on owned hardware.
+- **Command Center:** the sanitized disaster-recovery repo for the whole server — services pinned as submodules, a host-detecting bootstrap, backup/restore tooling, and written rebuild runbooks.
 - Everything is **self-hosted, terminal-first, and monitored** — I automate the things I use, and I operate the automation.
 
 ## Outside the code
@@ -38,7 +40,7 @@ Recent builds include an **end-to-end encrypted browser terminal** (AES-GCM via 
 
 ## Tech I live in
 
-IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · React · .NET / C# · Azure · ServiceNow · FastAPI · Docker · n8n · PostgreSQL · LLM / Ollama · OpenCode · DeepSeek · Cloudflare Zero Trust · Linux (self-hosted everything)
+IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · React · .NET / C# · Azure · ServiceNow · FastAPI · Docker · n8n · PostgreSQL · LLM / Ollama · Whisper STT · Kokoro / Piper / eSpeak TTS · OpenCode · DeepSeek · Cloudflare Zero Trust · Cloudflare Access · Kasm · Linux (self-hosted everything)
 
 ## Get in touch
 
