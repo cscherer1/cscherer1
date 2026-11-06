@@ -2,48 +2,51 @@
 
 **Full-Stack & AI Systems Engineer / Solutions Architect** — I build software, automation, and AI tooling that runs enterprises, and I make legacy and modern systems talk to each other.
 
-🔗 [christianscherer.dev](https://christianscherer.dev) · 📍 Kansas City → Brighton, UK
+[christianscherer.dev](https://christianscherer.dev) · Kansas City → Brighton, UK
 
 ---
 
 ## What I do
 
-8+ years building and integrating systems — from IBM i / RPGLE business logic to Azure, Python, and .NET — plus my own operated homelab that runs **52 containers** across the home, career, and local-AI stacks: a full self-hosted media pipeline, DNS, ad-blocking, remote access, monitoring, a FileBrowser, a WebTTY, a mesh VPN, even a Folding@home node. Nothing here is a tutorial project; everything is **running, self-hosted, and monitored** (Uptime Kuma), exposed through Cloudflare Zero Trust tunnels with **no open inbound ports** — split-horizon DNS via AdGuard Home, orchestration via Portainer, ClamAV quarantine-review and Cloudflare Zero Trust IP-sync scripts I wrote for my own stack.
+I have spent 8+ years building and integrating systems: IBM i / RPGLE business logic and Azure/.NET integration at Murphy-Hoffman, and before that Microsoft 365, ServiceNow, and IT systems at Burns & McDonnell. The through-line is integration and automation — replacing manual, fragile processes with explicit pipelines that can be verified and operated.
 
-Recent builds include an **end-to-end encrypted browser terminal** (AES-GCM via WebCrypto, paramiko SSH into persistent tmux sessions, no inbound ports), a **disposable-container verification pipeline** that gates merges on reproducible static, unit, API, and UI checks, a **config-driven container control plane** (FastAPI + Docker SDK behind a scoped socket proxy, Cloudflare Access JWT verification), a **self-hosted speech service** (faster-whisper STT plus Kokoro/Piper/eSpeak TTS with per-emotion prosody), and a **sanitized disaster-recovery repo** with a host-detecting bootstrap, backup/restore tooling, and rebuild runbooks, and an **encrypted AI operations console** (OpenCode sessions, screenshot attachments, all-session cost analytics, a **Mind** observer feed for thoughts/tests/screenshots with on-demand speech and text-only episodic memory, Kuma health, verified backups), and a **self-healing operations layer** (Kuma-to-ntfy alerts, health/CPU watchdogs, queue janitor, nightly appdata backups). The console now also runs a **read-only Sentinel observer** (anomaly triage, advisory suggestions, rate-limited alerts), a **local FTS5 recall index** across notes/Mind/council/Sentinel history, a **four-lab model council** with triage, verification and a judge, a **supervised remote-desktop gateway**, and a live **architecture/data-flow** view.
+Outside work I run a self-hosted homelab (Intel NUC, Ubuntu, Docker Compose) with **52 containers** across home, career, and local-AI stacks: a full media pipeline, DNS and ad-blocking, remote access, monitoring, file and terminal tools, and local speech and LLM services. Everything is running, monitored (Uptime Kuma, **38 monitors**), and exposed through Cloudflare Zero Trust with no open inbound ports.
 
-**Career focus:** Full-Stack Engineering · AI Systems Engineering · Enterprise Solutions Architecture · Systems Integration · Automation Engineering · ServiceNow · Azure integration · Cloudflare Zero Trust networking.
+## What I'm building now
+
+- **OP-E Console / Secure-Term** — an end-to-end encrypted browser terminal and AI operations console. It fronts OpenCode/DeepSeek sessions with cost analytics, a **Mind** observer feed, a read-only **Sentinel** observer (anomaly triage and advisory alerts), local **FTS5 recall** across notes/Mind/council/Sentinel history, a **four-lab model council** with triage, verification and a judge, a supervised **remote-desktop** gateway, and a live **architecture/data-flow** view.
+- **JobDashboard / Career OS** — a self-hosted job-search stack: n8n orchestration, NocoDB on PostgreSQL as the system of record, JobSpy ingestion, an evidence-based skill inventory grounded in real GitHub/portfolio/LinkedIn data, LLM fit scoring, and ATS-safe resumes and cover letters from a JSON-Resume model.
+- **Contract Radar** — a private contract pipeline covering discovery, review, submissions, invoices, chase-ups, and encrypted backups.
+- **Command Deck** — a config-driven container control plane and **43-tool** console over the live Docker inventory, with health probes, host and container stats, and guarded actions behind Cloudflare Access.
+- **Agent-Test**, **CrAM**, **Lulu**, **OP-E Voice**, and **Command Center** (a sanitized disaster-recovery rebuild repo) round out the operated stack.
 
 ## What you'll find here
 
 | Repo | What it is | Why it's interesting |
 |---|---|---|
-| [scherer-api](https://github.com/cscherer1/scherer-api) | ASP.NET Core 9 REST API | Production-deployed API with JWT auth, BCrypt, FluentValidation, rate-limited login — powers my portfolio site |
-| [scherer-site](https://github.com/cscherer1/scherer-site) | React 19 + TypeScript SPA | Performance-conscious frontend with a hidden admin panel; holds the JWT in memory only |
-| [trackfolio](https://github.com/cscherer1/trackfolio) | Java 21 + Spring Boot app tracker | The foundation of my job-search stack — search, filters, sorting, real tests |
+| [scherer-api](https://github.com/cscherer1/scherer-api) | ASP.NET Core 9 REST API | Production API with JWT auth, BCrypt, FluentValidation, and rate-limited login |
+| [scherer-site](https://github.com/cscherer1/scherer-site) | React 19 + TypeScript SPA | The portfolio frontend; JWT held in memory only, with an admin portal |
+| [trackfolio](https://github.com/cscherer1/trackfolio) | Java 21 + Spring Boot app tracker | The foundation of the job-search stack — search, filters, sorting, real tests |
 
-**Currently building:** a fully automated, self-hosted career stack — **JobDashboard** — that replaces manual job hunting with an orchestrated pipeline: n8n orchestrates, NocoDB (on PostgreSQL 17) is the system of record, JobSpy ingests listings, an evidence-based skill inventory grounds resumes in *real* GitHub/portfolio/LinkedIn skills (not self-reported claims), and a resume renderer produces ATS-safe PDFs. It's architected around the Cloudflare 524 edge-timeout lesson: heavy work runs as background jobs that report progress instead of one long-lived request. It now also generates per-job company research, study guides, and interview prep grounded in verified evidence, and has a job detail drawer with saved filter views; I develop it through an agentic **OpenCode + DeepSeek** workflow constrained by the same verification gates as any human change.
+Most of the operations work (Secure-Term, OP-E Console, JobDashboard, Contract Radar, Command Deck, Agent-Test, Command Center) is in private repos; the live results are linked above.
 
-## The operating evidence (things I actually run and operate)
+## How I operate
 
-- **Home server (Intel NUC, Ubuntu 24.04 LTS + Docker Compose):** 52 containers across the home, career, and local-AI stacks — a full self-hosted media pipeline (automated acquisition, metadata, and streaming, ~10 services deep), a **local AI stack** (Ollama, my **ouroborn** agent-orchestration project: a council of local LLMs with jury/witness evaluation and blind labels so models can't anchor on each other's names — the opposite of an API-call wrapper), remote access (Cloudflare Zero Trust, meshcentral, WebTTY), platform (Portainer, Glances, Uptime Kuma, ntfy, Stirling-PDF, PairDrop, FileBrowser, Homepage), the career stack above, and a **Command Deck** control plane and 43-tool operations console that discovers the live Docker inventory, groups tools by function, runs health probes, and exposes guarded start/stop/restart with host and per-container stats.
-- **Secure-Term + OP-E Console:** an end-to-end encrypted browser terminal and AI chat console that keep content opaque to edge and TLS-inspection proxies — Python standard library HTTP server, AES-GCM, SSH, persistent tmux, OpenCode API sessions, screenshot attachments, cost/token analytics, the **Mind** observer feed with text-only episodic memory that survives End chat, a **Sentinel** observer and **recall** search, a multi-lab model **council**, a supervised **remote-desktop** gateway, and a live architecture view, reachable only through an authenticated tunnel.
-- **Reproducible laptop setup:** a private GitHub repo manages the OpenCode config, `ope` wrapper, tmux shim, and desktop launchers; a 5-minute pull/apply sync keeps the laptop aligned, with backups on drift.
-- **OP-E Voice:** a local speech service for my agent interface — faster-whisper transcription and Kokoro/Piper/eSpeak synthesis with per-emotion prosody. No cloud speech APIs; all inference runs on owned hardware.
-- **Command Center:** the sanitized disaster-recovery repo for the whole server — services pinned as submodules, a host-detecting bootstrap, backup/restore tooling, and written rebuild runbooks.
-- **Self-healing operations:** 37 Kuma monitors bridged to ntfy; cron watchdogs restart high-CPU/unhealthy containers, clear stuck Sonarr imports, block executable downloads, and run nightly consistent appdata backups mirrored across both drives.
-- Everything is **self-hosted, terminal-first, and monitored** — I automate the things I use, and I operate the automation.
+- **Self-healing by default.** Kuma-to-ntfy alerts, health and CPU watchdogs, queue janitors, dead-man freshness checks, port guards, and nightly appdata backups mirrored across drives.
+- **Verification over vibes.** Agent-Test runs static analysis, unit/API/UI checks, and hardcode scans in disposable containers; merges wait on a green gate. I develop with OpenCode + DeepSeek under the same gates as any human change.
+- **Encrypted by default.** An E2E-encrypted terminal and console (AES-GCM, SSH, tmux), Cloudflare Access in front of every UI, encrypted backups, and a sanitized DR repo with a host-detecting bootstrap and rebuild runbooks.
+- **Reproducible laptop.** A private sync repo manages the OpenCode config, wrappers, tmux shim, and launchers with a five-minute pull/apply.
 
 ## Outside the code
 
-- **8+ years** Burns & McDonnell (software developer → ServiceNow lead → IT systems) → **now** Full-Stack Developer & Solutions Architect at Murphy-Hoffman Company (IBM i middleware + Azure/.NET integration)
-- **BS Computer Science**, Southern New Hampshire University — Summa Cum Laude, **4.0 GPA**, Distinguished Scholar Award, earned while working full time
-- Designs tools for my hobbies (game mod load-order management, Steam workshop tooling) — I automate even the things I enjoy
+- 8+ years Burns & McDonnell (software developer → ServiceNow lead → IT systems) → now Full-Stack Developer & Solutions Architect at Murphy-Hoffman Company (IBM i middleware + Azure/.NET integration)
+- BS Computer Science, Southern New Hampshire University — Summa Cum Laude, 4.0 GPA, Distinguished Scholar Award, earned while working full time
+- I build tools for my hobbies too — game mod load-order management and Steam workshop tooling — because the automation habit does not turn off
 
 ## Tech I live in
 
-IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · React · .NET / C# · Azure · ServiceNow · FastAPI · Docker · n8n · PostgreSQL · LLM / Ollama · Whisper STT · Kokoro / Piper / eSpeak TTS · OpenCode · DeepSeek · Cloudflare Zero Trust · Cloudflare Access · Kasm · Uptime Kuma · ntfy · Cron/systemd automation · Linux (self-hosted everything)
+IBM i / RPGLE · CL · Profound UI · Python · SQL · JavaScript · TypeScript · React · .NET / C# · Azure · ServiceNow · FastAPI · Docker · n8n · PostgreSQL · LLM / Ollama · Whisper STT · Kokoro / Piper / eSpeak TTS · OpenCode · DeepSeek · Cloudflare Zero Trust · Cloudflare Access · Kasm · Uptime Kuma · ntfy · Cron/systemd automation · Linux
 
 ## Get in touch
 
-Reach me through [christianscherer.dev](https://christianscherer.dev) — I'm open to Full-Stack Engineer / AI Systems Engineer / Enterprise Solutions Architect / Systems Integration roles, and always happy to talk automation.
+Reach me through [christianscherer.dev](https://christianscherer.dev) — I am open to Full-Stack Engineer / AI Systems Engineer / Enterprise Solutions Architect / Systems Integration roles, and always happy to talk automation.
